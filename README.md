@@ -1,45 +1,34 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+# Hotel California
 
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
-# NomedoProjeto
-
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Lista**: 4<br>
+**Conteúdo da Disciplina**: Divide and Conquer<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 17/0034992  |  Gustavo Afonso Pires Severo  |
+| 17/0011119  |  Geraldo Victor Alves Barbosa |
 
-## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+
+## Sobre
+O projeto se trata de um site que lista hotéis para viajantes e usa algoritmos de D&C para diversas de suas funcionalidades. 
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+Screenshot_1_placeholder.
+Screenshot_2_placeholder.
+Screenshot_3_placeholder.
 
-## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+## Sobre 
+**Linguagem**: Python3<br>
+**Framework**: Flask + bootstrap<br>
+
+## Instalação
+Instrução_1_placeholder.
+Instrução_2_placeholder.
+Instrução_3_placeholder.
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Instruções de uso placeholder.
 
 ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
-
-
-
-
+Outras informações sobre o projeto.

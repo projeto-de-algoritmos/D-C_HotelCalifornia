@@ -1,0 +1,12 @@
+TO DO LIST
+
+S - Listar quais algoritmos são aplicáveis para o site.
+    - Merge sort para organizar os hoteis por alguma métrica
+    - Contagem de inversões para saber a compatibilidade com um hotel
+    - Closest set of points para saber a localização de 2 hoteis mais proximos
+N - Pensar em como aplicar os algoritmos.
+N - Fazer o documento de telas e funcionalidades.
+N - Organizar template adequado para o projeto.
+N - Implementar o backend.
+N - Completar o read-me.
+N - Fazer exercícios de divide and conquer
