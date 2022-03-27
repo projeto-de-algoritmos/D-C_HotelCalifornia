@@ -1,0 +1,53 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}cafes{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <h1>All Hotels</h1>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">{{hotels[0][0]}}</th>
+              <th scope="col">{{hotels[0][1]}}</th>
+              <th scope="col">{{hotels[0][2]}}</th>
+              <th scope="col">{{hotels[0][3]}}</th>
+              <th scope="col">{{hotels[0][4]}}</th>
+              <th scope="col">{{hotels[0][5]}}</th>
+              <th scope="col">{{hotels[0][6]}}</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            {% for hotel in hotels[1:]: %}
+            <!-- This is where you will write the code to render a Bootstrap
+            Table that contains all the information from the
+            cafe-data.csv file. -->
+            <tr>
+              <td>{{hotel[0]}}</td>
+              <td>{{hotel[1]}}</td>
+              <td>{{hotel[2]}}</td>
+              <td>{{hotel[3]}}</td>
+              <td>{{hotel[4]}}</td>
+              <td>{{hotel[5]}}</td>
+              <td>{{hotel[6]}}</td>
+            </tr>
+
+            {% endfor %}
+
+          </tbody>
+        </table>
+
+
+      <p><a href="#">Return to index page</a></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Hotel California{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+    <h1 class="display-4">🥂  🏄‍♂️ 🌇 Hotel California 🌇 🏄‍♀️🥂</h1>
+    <p class="lead">Want to know where the best hotels are?</p>
+    <hr class="my-4">
+    <p>You've found the right place! Checkout the collection of hotels, or add a new hotel.</p>
+    <a class="btn btn-warning btn-lg" href="{{url_for('hotels')}}" role="button">Hotels</a>
+    <a class="btn btn-warning btn-lg" href="{{url_for('hotels')}}" role="button">Hotels</a>
+    </div>
+</div>
+
+{% endblock %}
