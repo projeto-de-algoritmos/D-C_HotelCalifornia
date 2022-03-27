@@ -1,8 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
+from wtforms import StringField, SubmitField, SelectField
+from wtforms.validators import DataRequired, URL
 import csv
 
 app = Flask(__name__)
@@ -11,33 +11,45 @@ Bootstrap(app)
 
 
 class HotelForm(FlaskForm):
+
     hotel = StringField('Hotel name', validators=[DataRequired()])
+    location = StringField("Hotel Location on Google Maps (URL)", validators=[DataRequired(), URL()])
+    open = StringField("Opening Time e.g. 8AM", validators=[DataRequired()])
+    close = StringField("Closing Time e.g. 5:30PM", validators=[DataRequired()])
+    coffee_rating = SelectField("Coffee Rating", choices=["☕", "☕☕", "☕☕☕", "☕☕☕☕", "☕☕☕☕☕"], validators=[DataRequired()])
+    wifi_rating = SelectField("Wifi Strength Rating", choices=["✘", "💪", "💪💪", "💪💪💪", "💪💪💪💪", "💪💪💪💪💪"], validators=[DataRequired()])
+    power_rating = SelectField("Power Socket Availability", choices=["✘", "🔌", "🔌🔌", "🔌🔌🔌", "🔌🔌🔌🔌", "🔌🔌🔌🔌🔌"], validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 
-# all Flask routes below
 @app.route("/")
 def home():
     return render_template("index.html")
 
 
-@app.route('/add')
+@app.route('/add', methods=["GET", "POST"])
 def add_hotel():
     form = HotelForm()
     if form.validate_on_submit():
-        print("True")
-
+        with open("hotel-data.csv", mode="a", encoding="utf8") as csv_file:
+            csv_file.write(f"\n{form.hotel.data},"
+                           f"{form.location.data},"
+                           f"{form.open.data},"
+                           f"{form.close.data},"
+                           f"{form.coffee_rating.data},"
+                           f"{form.wifi_rating.data},"
+                           f"{form.power_rating.data}")
+        return redirect(url_for('hotels'))
     return render_template('add.html', form=form)
 
 
 @app.route('/hotels')
 def hotels():
-    with open('hotel-data.csv', newline='') as csv_file:
+    with open('hotel-data.csv', newline='', encoding="utf8") as csv_file:
         csv_data = csv.reader(csv_file, delimiter=',')
         list_of_rows = []
         for row in csv_data:
             list_of_rows.append(row)
-
     return render_template('hotels.html', hotels=list_of_rows)
 
 
