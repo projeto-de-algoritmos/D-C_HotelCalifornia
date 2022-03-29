@@ -9,8 +9,10 @@
     <p class="lead">Want to know where the best hotels are?</p>
     <hr class="my-4">
     <p>You've found the right place! Checkout the collection of hotels, or add a new hotel.</p>
-    <a class="btn btn-warning btn-lg" href="{{url_for('hotels')}}" role="button">Hotels</a>
-    <a class="btn btn-warning btn-lg" href="{{url_for('add_hotel')}}" role="button">Add</a>
+        <a class="btn btn-warning btn-lg" href="{{url_for('hotels')}}" role="button">Your Hotels</a>
+        <a class="btn btn-warning btn-lg" href="{{url_for('hotels_ranking')}}" role="button">Sorted Hotels</a>
+        <a class="btn btn-warning btn-lg" href="{{url_for('add_hotel')}}" role="button">Add</a>
+        <a class="btn btn-warning btn-lg" href="{{url_for('review_suggestion')}}" role="button">Recommendations</a>
     </div>
 </div>
 
